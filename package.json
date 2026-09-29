@@ -1,0 +1,37 @@
+{
+  "name": "prom-parse",
+  "version": "0.1.0",
+  "description": "Parse and serialize the Prometheus text format (0.0.4) and OpenMetrics 1.0. Accepts and rejects what Go's expfmt and the OpenMetrics test suite do.",
+  "keywords": ["prometheus", "openmetrics", "exposition", "metrics", "parser", "serializer", "expfmt", "text-format"],
+  "license": "MIT",
+  "author": "__AUTHOR__",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/__GH_OWNER__/prom-parse.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "LICENSE", "LICENSE-prometheus-common", "NOTICE-prometheus-common"],
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build && npm run test:dist",
+    "test:dist": "node --test test/smoke.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "prom-client": "^15.1.3",
+    "typescript": "^5.7.0"
+  }
+}
