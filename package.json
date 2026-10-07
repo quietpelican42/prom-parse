@@ -4,10 +4,10 @@
   "description": "Parse and serialize the Prometheus text format (0.0.4) and OpenMetrics 1.0. Accepts and rejects what Go's expfmt and the OpenMetrics test suite do.",
   "keywords": ["prometheus", "openmetrics", "exposition", "metrics", "parser", "serializer", "expfmt", "text-format"],
   "license": "MIT",
-  "author": "__AUTHOR__",
+  "author": "kofiadeyemiq",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/__GH_OWNER__/prom-parse.git"
+    "url": "git+https://github.com/quietpelican42/prom-parse.git"
   },
   "type": "module",
   "engines": {
